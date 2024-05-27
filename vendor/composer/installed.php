@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'randgraphics/attendance',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => null,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '1a8a546cea9aabc86178985a393b381f70254aee',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -298,6 +298,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'datatables.net/editor-php' => array(
+            'pretty_version' => '2.3.2',
+            'version' => '2.3.2.0',
+            'reference' => 'ef7a9cff90ca9e1a5424f4e32743ddbe4d84a42f',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../datatables.net/editor-php',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'gaomingcode/jszip' => array(
             'pretty_version' => '3.6.0',
             'version' => '3.6.0.0',
@@ -308,9 +317,9 @@
             'dev_requirement' => false,
         ),
         'randgraphics/attendance' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => null,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '1a8a546cea9aabc86178985a393b381f70254aee',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

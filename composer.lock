@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "19ef184bd648d006c787bfd502201694",
+    "content-hash": "79a079fab802b8b2ff9ebbfc9a6c13bb",
     "packages": [
         {
             "name": "bpampuch/pdfmake",
@@ -1416,6 +1416,58 @@
                 "source": "https://github.com/DataTables/Dist-DataTables-StateRestore-DataTables"
             },
             "time": "2024-04-10T15:50:36+00:00"
+        },
+        {
+            "name": "datatables.net/editor-php",
+            "version": "2.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DataTables/Editor-PHP.git",
+                "reference": "ef7a9cff90ca9e1a5424f4e32743ddbe4d84a42f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DataTables/Editor-PHP/zipball/ef7a9cff90ca9e1a5424f4e32743ddbe4d84a42f",
+                "reference": "ef7a9cff90ca9e1a5424f4e32743ddbe4d84a42f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0 <8.4"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "~3.41.0",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan": "~1.10.47",
+                "phpstan/phpstan-deprecation-rules": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "DataTables\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SpryMedia Ltd",
+                    "homepage": "https://datatables.net"
+                }
+            ],
+            "description": "PHP server-side libraries for Editor",
+            "homepage": "https://editor.datatables.net",
+            "keywords": [
+                "datatables",
+                "editor",
+                "jquery"
+            ],
+            "support": {
+                "issues": "https://github.com/DataTables/Editor-PHP/issues",
+                "source": "https://github.com/DataTables/Editor-PHP/tree/2.3.2"
+            },
+            "time": "2024-03-08T11:38:41+00:00"
         },
         {
             "name": "gaomingcode/jszip",
