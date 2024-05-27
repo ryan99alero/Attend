@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MessDetectorOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PHPCSFixerOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PHPCodeSnifferOptionsConfiguration">
+    <option name="highlightLevel" value="WARNING" />
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net-buttons-dt" />
+      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net-fixedheader" />
+      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net-scroller-dt" />
+      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net-searchbuilder" />
+      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net-fixedheader-dt" />
+      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net-rowgroup-dt" />
+      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net-colreorder" />
+      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net-keytable-dt" />
+      <path value="$PROJECT_DIR$/vendor/components/jquery" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/gaomingcode/jszip" />
+      <path value="$PROJECT_DIR$/vendor/bpampuch/pdfmake" />
+      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net-responsive-dt" />
+      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net-select-dt" />
+      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net-autofill" />
+      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net-searchbuilder-dt" />
+      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net-responsive" />
+      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net-searchpanes" />
+      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net-colreorder-dt" />
+      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net-fixedcolumns" />
+      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net-keytable" />
+      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net-rowgroup" />
+      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net-rowreorder" />
+      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net-searchpanes-dt" />
+      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net-dt" />
+      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net-autofill-dt" />
+      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net-staterestore" />
+      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net-buttons" />
+      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net-scroller" />
+      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net" />
+      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net-staterestore-dt" />
+      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net-fixedcolumns-dt" />
+      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net-rowreorder-dt" />
+      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net-select" />
+      <path value="$PROJECT_DIR$/vendor/datatables.net/editor-php" />
+    </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.0">
+    <option name="suggestChangeDefaultLanguageLevel" value="false" />
+  </component>
+  <component name="PhpStanOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PsalmOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+</project>
