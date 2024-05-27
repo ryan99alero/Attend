@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <version>2.7.0</version>
+        <id>datatables.net-autofill-dt</id>
+        <description>This is AutoFill for DataTables with styling for [DataTables](https://datatables.net/)</description>
+        <repository type="git" url="https://github.com/DataTables/Dist-DataTables-AutoFill-DataTables.git"/>
+        <authors>SpryMedia Ltd</authors>
+        <projectUrl>http://datatables.net</projectUrl>
+        <license type="expression">MIT</license>
+        <tags>AutoFill  Excel   Datatables jQuery table</tags>
+        <dependencies>
+            <dependency id="datatables.net-autofill" version="2.4.0"/>
+            <dependency id="datatables.net-dt" version="1.12.1"/>
+        </dependencies>
+        <contentFiles>
+            <files include="**/*" buildAction="Content"/>
+        </contentFiles>
+    </metadata>
+    <files>
+        <file src="js/autoFill.dataTables.js" target="content\Scripts"/>
+        <file src="js/autoFill.dataTables.js" target="contentFiles\any\any\wwwroot\js"/>
+        <file src="js/autoFill.dataTables.min.js" target="content\Scripts"/>
+        <file src="js/autoFill.dataTables.min.js" target="contentFiles\any\any\wwwroot\js"/>
+        <file src="css/autoFill.dataTables.css" target="content\Content"/>
+        <file src="css/autoFill.dataTables.css" target="contentFiles\any\any\wwwroot\css"/>
+        <file src="css/autoFill.dataTables.min.css" target="content\Content"/>
+        <file src="css/autoFill.dataTables.min.css" target="contentFiles\any\any\wwwroot\css"/>
+    </files>
+</package>
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <version>1.4.1</version>
+        <id>datatables.net-rowreorder-dt</id>
+        <description>This is RowReorder for DataTables with styling for [DataTables](https://datatables.net/)</description>
+        <repository type="git" url="https://github.com/DataTables/Dist-DataTables-RowReorder-DataTables.git"/>
+        <authors>SpryMedia Ltd</authors>
+        <projectUrl>http://datatables.net</projectUrl>
+        <license type="expression">MIT</license>
+        <tags>RowReorder  Row Reordering   Datatables jQuery table</tags>
+        <dependencies>
+            <dependency id="datatables.net-rowreorder" version="1.2.8"/>
+            <dependency id="datatables.net-dt" version="1.12.1"/>
+        </dependencies>
+        <contentFiles>
+            <files include="**/*" buildAction="Content"/>
+        </contentFiles>
+    </metadata>
+    <files>
+        <file src="js/rowReorder.dataTables.js" target="content\Scripts"/>
+        <file src="js/rowReorder.dataTables.js" target="contentFiles\any\any\wwwroot\js"/>
+        <file src="js/rowReorder.dataTables.min.js" target="content\Scripts"/>
+        <file src="js/rowReorder.dataTables.min.js" target="contentFiles\any\any\wwwroot\js"/>
+        <file src="css/rowReorder.dataTables.css" target="content\Content"/>
+        <file src="css/rowReorder.dataTables.css" target="contentFiles\any\any\wwwroot\css"/>
+        <file src="css/rowReorder.dataTables.min.css" target="content\Content"/>
+        <file src="css/rowReorder.dataTables.min.css" target="contentFiles\any\any\wwwroot\css"/>
+    </files>
+</package>
+
