@@ -11,12 +11,20 @@ class ComposerStaticInit19ef184bd648d006c787bfd502201694
         array (
             'Randgraphics\\Attendance\\' => 24,
         ),
+        'D' => 
+        array (
+            'DataTables\\' => 11,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'Randgraphics\\Attendance\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
+        ),
+        'DataTables\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/datatables.net/editor-php',
         ),
     );
 

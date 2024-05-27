@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Randgraphics\\Attendance\\' => array($baseDir . '/src'),
+    'DataTables\\' => array($vendorDir . '/datatables.net/editor-php'),
 );
