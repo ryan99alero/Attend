@@ -21,7 +21,8 @@
         "components/jquery": "^3.7",
         "gaomingcode/jszip": "^3.6",
         "bpampuch/pdfmake": "^0.2.10",
-        "datatables.net/editor-php": "^2.3"
+        "datatables.net/editor-php": "^2.3",
+         "ext-pdo": "*"
     },
     "license": "MIT",
     "autoload": {
