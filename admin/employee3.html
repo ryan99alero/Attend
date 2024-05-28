@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Employee Management</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.3.4/css/select.dataTables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/datetime/1.1.2/css/dataTables.dateTime.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://editor.datatables.net/extensions/Editor/css/editor.dataTables.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/select/1.3.4/js/dataTables.select.min.js"></script>
+    <script src="https://cdn.datatables.net/datetime/1.1.2/js/dataTables.dateTime.min.js"></script>
+    <script src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
+</head>
+<body>
+<h1>Employee Management</h1>
+<table id="employees" class="display" style="width:100%">
+    <thead>
+    <tr>
+        <th>Employee ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Address</th>
+        <th>Birthdate</th>
+        <th>Contact Info</th>
+        <th>Position ID</th>
+        <th>Schedule ID</th>
+        <th>Photo</th>
+        <th>Created On</th>
+    </tr>
+    </thead>
+</table>
+
+<script>
+    $(document).ready(function() {
+        var editor = new $.fn.dataTable.Editor({
+            ajax: "employee3_server.php",
+            table: "#employees",
+            fields: [
+                { label: "Employee ID", name: "employee_id" },
+                { label: "First Name", name: "firstname" },
+                { label: "Last Name", name: "lastname" },
+                { label: "Address", name: "address" },
+                { label: "Birthdate", name: "birthdate", type: "datetime" },
+                { label: "Contact Info", name: "contact_info" },
+                { label: "Position ID", name: "position_id" },
+                { label: "Schedule ID", name: "schedule_id" },
+                { label: "Photo", name: "photo" },
+                { label: "Created On", name: "created_on", type: "datetime" }
+            ]
+        });
+
+        $('#employees').DataTable({
+            dom: "Bfrtip",
+            ajax: "employee2_server.php",
+            columns: [
+                { data: "employee_id" },
+                { data: "firstname" },
+                { data: "lastname" },
+                { data: "address" },
+                { data: "birthdate" },
+                { data: "contact_info" },
+                { data: "position_id" },
+                { data: "schedule_id" },
+                { data: "photo" },
+                { data: "created_on" }
+            ],
+            select: true,
+            buttons: [
+                { extend: "create", editor: editor },
+                { extend: "edit", editor: editor },
+                { extend: "remove", editor: editor }
+            ]
+        });
+    });
+</script>
+</body>
+</html>
