@@ -1,4 +1,4 @@
-k<?php
+<?php
 $host = 'localhost';
 $db   = 'apsystem';
 $user = 'phpmyadmin';
