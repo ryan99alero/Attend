@@ -71,7 +71,7 @@ Editor::inst($pdo, 'employees', 'id')
     <script>
         $(document).ready(function() {
             var editor = new $.fn.dataTable.Editor({
-                ajax: "employees.php",
+                ajax: "http://192.168.29.54/admin/employees.php",
                 table: "#employees",
                 fields: [
                     { label: "Employee ID", name: "employee_id" },
@@ -89,7 +89,7 @@ Editor::inst($pdo, 'employees', 'id')
 
             $('#employees').DataTable({
                 dom: "Bfrtip",
-                ajax: "employees.php",
+                ajax: "http://192.168.29.54/admin/employees.php",
                 columns: [
                     { data: "employee_id" },
                     { data: "firstname" },
