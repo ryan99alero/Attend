@@ -1,4 +1,9 @@
 <?php
+// Enable full error reporting
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+
 // Include the DataTables PHP library and database connection
 require '../vendor/autoload.php';
 require '../assets/config/conn.php';
@@ -43,6 +48,8 @@ try {
         ->process($_POST)
         ->json();
 } catch (\Exception $e) {
-    throw $e;
+    echo "Exception caught: " . $e->getMessage();
+    // Log the error or handle it as needed
+    error_log($e->getMessage());
 }
 ?>
