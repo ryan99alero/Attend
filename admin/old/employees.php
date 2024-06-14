@@ -1,7 +1,7 @@
 <?php
 // Include the DataTables PHP library and database connection
 require '../vendor/autoload.php';
-require '../assets/config/conn.php';
+require '../assets/config/db.php';
 
 use DataTables\Editor;
 use DataTables\Editor\Field;
@@ -40,15 +40,15 @@ Editor::inst($pdo, 'employees', 'id')
 <html lang="">
 <head>
     <title>Employees</title>
-    <link rel="stylesheet" type="text/css" href="../assets/css/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/datatables.min.css"/>
 <!--    <link rel="stylesheet" type="text/css" href="../assets/css/editor.dataTables.min.css"/>-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/datatables.css"/>
-    <script src="../vendor/components/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/datatables.css"/>
+    <script src="../../vendor/components/jquery/jquery.min.js"></script>
 <!--    <script src="../assets/js/jquery.min.js"></script>-->
 <!--    <script src="../assets/js/datatables.min.js"></script>-->
 <!--    <script src="../assets/js/dataTables.editor.min.js"></script>-->
-    <script src="../assets/js/datatables.min.js"></script>
-    <script src="../assets/js/datatables.js"></script>
+    <script src="../../assets/js/datatables.min.js"></script>
+    <script src="../../assets/js/datatables.js"></script>
 </head>
 <body>
     <table id="employees" class="display" style="width:100%">
