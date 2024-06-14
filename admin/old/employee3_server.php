@@ -6,7 +6,7 @@ ini_set('display_startup_errors', 1);
 
 // Include the DataTables PHP library and database connection
 require '../vendor/autoload.php';
-require '../assets/config/conn.php';
+require '../assets/config/db.php';
 
 use DataTables\Editor;
 use DataTables\Editor\Field;
