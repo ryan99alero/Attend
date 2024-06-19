@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Time and Attendance</title>
-    <link rel="stylesheet" type="text/css" href="../assets/css/datatables.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/datatables.css">
 </head>
 <body>
 <table id="attendance" class="display" style="width:100%">
@@ -20,7 +20,7 @@
     </thead>
 </table>
 
-<script type="text/javascript" charset="utf8" src="../assets/js/datatables.min.js"></script>
+<script type="text/javascript" charset="utf8" src="../assets/js/datatables.js"></script>
 <script>
     $(document).ready(function() {
         var editor = new $.fn.dataTable.Editor({
