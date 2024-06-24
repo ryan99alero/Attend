@@ -199,7 +199,7 @@ abstract class Query
 	 *
 	 * @return \PDO
 	 */
-	public static function connect($user, $pass = '', $host = '', $port = '', $db = '', $dsn = '')
+	public static function connect($user = 'phpmyadmin', $pass = 'KnzudGNfJoiQgKv3nUNY37', $host = '127.0.0.1', $port = '3306', $db = 'time_attendance_system', $dsn = '')
 	{
 		// noop - PHP <7 can't have an abstract static without causing
 		// an error in strict mode. This should technically be an
