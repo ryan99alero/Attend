@@ -1,6 +1,6 @@
 <?php
 
-require '../assets/config/db.php';
+//require '../assets/config/db.php';
 
 // DataTables PHP library and database connection
 include( "lib/DataTables.php" );
