@@ -8,7 +8,7 @@
 <div class="container">
     <h1>Welcome to the Index Page</h1>
     <p>
-        <a href="../admin/employees.php" class="btn btn-primary">Manage Employees</a>
+        <a href="../admin/Employees.php" class="btn btn-primary">Manage Employees</a>
     </p>
 </div>
 </body>

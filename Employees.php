@@ -20,13 +20,13 @@ if (isset($_GET['draw'])) {
     $length = $_GET['length'];
     $searchValue = $_GET['search']['value'];
 
-    $query = "SELECT * FROM employees WHERE 1=1";
+    $query = "SELECT * FROM Employees WHERE 1=1";
 
     if (!empty($searchValue)) {
         $query .= " AND (first_name LIKE '%$searchValue%' OR last_name LIKE '%$searchValue%' OR email LIKE '%$searchValue%' OR employment_type LIKE '%$searchValue%')";
     }
 
-    $totalQuery = "SELECT COUNT(*) as total FROM employees";
+    $totalQuery = "SELECT COUNT(*) as total FROM Employees";
     $resultTotal = $conn->query($totalQuery);
     $totalData = $resultTotal->fetch_assoc()['total'];
 

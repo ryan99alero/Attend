@@ -13,7 +13,7 @@ use DataTables\Editor\Validate;
 use DataTables\Editor\ValidateOptions;
 
 // Build the Editor instance and process the data coming from _POST
-Editor::inst($pdo, 'employees', 'id')
+Editor::inst($pdo, 'Employees', 'id')
     ->fields(
         Field::inst('employee_id'),
         Field::inst('firstname'),
@@ -51,7 +51,7 @@ Editor::inst($pdo, 'employees', 'id')
     <script src="../../assets/js/datatables.js"></script>
 </head>
 <body>
-    <table id="employees" class="display" style="width:100%">
+    <table id="Employees" class="display" style="width:100%">
         <thead>
             <tr>
                 <th>Employee ID</th>
@@ -71,8 +71,8 @@ Editor::inst($pdo, 'employees', 'id')
     <script>
         $(document).ready(function() {
             var editor = new $.fn.dataTable.Editor({
-                ajax: "http://192.168.29.54/admin/employees.php",
-                table: "#employees",
+                ajax: "http://192.168.29.54/admin/Employees.php",
+                table: "#Employees",
                 fields: [
                     { label: "Employee ID", name: "employee_id" },
                     { label: "First Name", name: "firstname" },
@@ -87,9 +87,9 @@ Editor::inst($pdo, 'employees', 'id')
                 ]
             });
 
-            $('#employees').DataTable({
+            $('#Employees').DataTable({
                 dom: "Bfrtip",
-                ajax: "http://192.168.29.54/admin/employees.php",
+                ajax: "http://192.168.29.54/admin/Employees.php",
                 columns: [
                     { data: "employee_id" },
                     { data: "firstname" },

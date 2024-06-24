@@ -19,7 +19,7 @@ use DataTables\Editor\ValidateOptions;
 
 try {
     // Build the Editor instance and process the data coming from _POST
-    Editor::inst($pdo, 'employees', 'id')
+    Editor::inst($pdo, 'Employees', 'id')
         ->fields(
             Field::inst('employee_id')
                 ->validator(Validate::notEmpty(ValidateOptions::inst()
