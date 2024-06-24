@@ -15,11 +15,11 @@ ini_set('display_errors', '1');
  */
 $sql_details = [
 	'type' => 'Mysql',     // Database type: "Mysql", "Postgres", "Sqlserver", "Sqlite" or "Oracle"
-	'user' => '',          // Database user name
-	'pass' => '',          // Database password
-	'host' => '', // Database host
-	'port' => '',          // Database connection port (can be left empty for default)
-	'db' => '',          // Database name
+	'user' => 'phpmyadmin',          // Database user name
+	'pass' => 'KnzudGNfJoiQgKv3nUNY37',          // Database password
+	'host' => 'localhost', // Database host
+	'port' => '3306',          // Database connection port (can be left empty for default)
+	'db' => 'phpgrid',          // Database name
 	'dsn' => '',          // PHP DSN extra information. Set as `charset=utf8mb4` if you are using MySQL
 	'pdoAttr' => [],   // PHP PDO attributes array. See the PHP documentation for all options
 ];
