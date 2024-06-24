@@ -6,7 +6,7 @@ $password = "db_password";
 $dbname = "db_name";
 
 // DataTables PHP library
-include("../lib/DataTables.php");
+include("vendor/Editor/lib/DataTables.php");
 
 // Alias Editor classes so they are easy to use
 use DataTables\Editor;
