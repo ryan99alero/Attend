@@ -1,74 +1,73 @@
 <?php
 // Database configuration
 $servername = "localhost";
-$username = "phpmyadmin";
-$password = "KnzudGNfJoiQgKv3nUNY37";
-$dbname = "time_attendance_system";
+$username = "db_username";
+$password = "db_password";
+$dbname = "db_name";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+// DataTables PHP library
+include("../lib/DataTables.php");
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+// Alias Editor classes so they are easy to use
+use DataTables\Editor;
+use DataTables\Editor\Field;
+use DataTables\Editor\Format;
+use DataTables\Editor\Mjoin;
+use DataTables\Editor\Options;
+use DataTables\Editor\Upload;
+use DataTables\Editor\Validate;
+use DataTables\Editor\ValidateOptions;
 
-// Handling server-side processing for DataTables
-if (isset($_GET['draw'])) {
-    $draw = $_GET['draw'];
-    $start = $_GET['start'];
-    $length = $_GET['length'];
-    $searchValue = $_GET['search']['value'];
+// Database connection
+$db = new \DataTables\Database([
+    "type" => "Mysql",
+    "user" => $username,
+    "pass" => $password,
+    "host" => $servername,
+    "port" => "3306",
+    "db"   => $dbname
+]);
 
-    $query = "SELECT * FROM Employees WHERE 1=1";
-
-    if (!empty($searchValue)) {
-        $query .= " AND (first_name LIKE '%$searchValue%' OR last_name LIKE '%$searchValue%' OR email LIKE '%$searchValue%' OR employment_type LIKE '%$searchValue%')";
-    }
-
-    $totalQuery = "SELECT COUNT(*) as total FROM Employees";
-    $resultTotal = $conn->query($totalQuery);
-    $totalData = $resultTotal->fetch_assoc()['total'];
-
-    $query .= " LIMIT $start, $length";
-    $result = $conn->query($query);
-
-    $data = [];
-    while ($row = $result->fetch_assoc()) {
-        $data[] = [
-            $row['employee_id'],
-            $row['first_name'],
-            $row['last_name'],
-            $row['email'],
-            $row['department_id'],
-            $row['manager_id'],
-            $row['role_id'],
-            $row['password_hash'],
-            $row['rfid_card_id'],
-            $row['external_id'],
-            $row['adp_employee_id'],
-            $row['employment_type'],
-            $row['temp_agency_id'],
-            $row['active'],
-            $row['created_at'],
-            $row['created_by'],
-            $row['updated_at'],
-            $row['updated_by']
-        ];
-    }
-
-    $response = [
-        "draw" => intval($draw),
-        "recordsTotal" => intval($totalData),
-        "recordsFiltered" => intval($totalData),
-        "data" => $data
-    ];
-
-    echo json_encode($response);
-    exit;
-}
-
-$conn->close();
+// Build our Editor instance and process the data coming from _POST
+Editor::inst($db, 'employees')
+    ->fields(
+        Field::inst('employee_id'),
+        Field::inst('first_name')
+            ->validator(Validate::notEmpty(ValidateOptions::inst()
+                ->message('A first name is required')
+            )),
+        Field::inst('last_name')
+            ->validator(Validate::notEmpty(ValidateOptions::inst()
+                ->message('A last name is required')
+            )),
+        Field::inst('email')
+            ->validator(Validate::email(ValidateOptions::inst()
+                ->message('Please enter a valid e-mail address')
+            )),
+        Field::inst('department_id'),
+        Field::inst('manager_id'),
+        Field::inst('role_id'),
+        Field::inst('password_hash'),
+        Field::inst('rfid_card_id'),
+        Field::inst('external_id'),
+        Field::inst('adp_employee_id'),
+        Field::inst('employment_type'),
+        Field::inst('temp_agency_id'),
+        Field::inst('active'),
+        Field::inst('created_at')
+            ->validator(Validate::dateFormat('Y-m-d H:i:s'))
+            ->getFormatter(Format::dateSqlToFormat('Y-m-d H:i:s'))
+            ->setFormatter(Format::dateFormatToSql('Y-m-d H:i:s')),
+        Field::inst('created_by'),
+        Field::inst('updated_at')
+            ->validator(Validate::dateFormat('Y-m-d H:i:s'))
+            ->getFormatter(Format::dateSqlToFormat('Y-m-d H:i:s'))
+            ->setFormatter(Format::dateFormatToSql('Y-m-d H:i:s')),
+        Field::inst('updated_by')
+    )
+    ->debug(true)
+    ->process($_POST)
+    ->json();
 ?>
 
 <!DOCTYPE html>
@@ -78,9 +77,17 @@ $conn->close();
     <title>Employees DataTable</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/searchbuilder/1.1.0/css/searchBuilder.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.3.3/css/select.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/datetime/1.0.3/css/dataTables.dateTime.min.css">
+    <link rel="stylesheet" type="text/css" href="https://editor.datatables.net/extensions/Editor/css/editor.dataTables.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/searchbuilder/1.1.0/js/dataTables.searchBuilder.min.js"></script>
+    <script src="https://cdn.datatables.net/datetime/1.0.3/js/dataTables.dateTime.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/select/1.3.3/js/dataTables.select.min.js"></script>
+    <script src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
     <style>
         th {
             background-color: #f2f2f2;
@@ -117,31 +124,60 @@ $conn->close();
 
 <script>
     $(document).ready(function() {
+        var editor = new $.fn.dataTable.Editor({
+            ajax: "",
+            table: "#employeeTable",
+            fields: [
+                { label: "ID", name: "employee_id" },
+                { label: "First Name", name: "first_name" },
+                { label: "Last Name", name: "last_name" },
+                { label: "Email", name: "email" },
+                { label: "Department ID", name: "department_id" },
+                { label: "Manager ID", name: "manager_id" },
+                { label: "Role ID", name: "role_id" },
+                { label: "Password Hash", name: "password_hash" },
+                { label: "RFID Card ID", name: "rfid_card_id" },
+                { label: "External ID", name: "external_id" },
+                { label: "ADP Employee ID", name: "adp_employee_id" },
+                { label: "Employment Type", name: "employment_type" },
+                { label: "Temp Agency ID", name: "temp_agency_id" },
+                { label: "Active", name: "active" },
+                { label: "Created At", name: "created_at" },
+                { label: "Created By", name: "created_by" },
+                { label: "Updated At", name: "updated_at" },
+                { label: "Updated By", name: "updated_by" }
+            ]
+        });
+
         $('#employeeTable').DataTable({
-            "processing": true,
-            "serverSide": true,
-            "ajax": "",
-            "dom": 'Qfrtip',
-            "searchBuilder": true,
-            "columns": [
-                { "data": 0 },
-                { "data": 1 },
-                { "data": 2 },
-                { "data": 3 },
-                { "data": 4 },
-                { "data": 5 },
-                { "data": 6 },
-                { "data": 7 },
-                { "data": 8 },
-                { "data": 9 },
-                { "data": 10 },
-                { "data": 11 },
-                { "data": 12 },
-                { "data": 13 },
-                { "data": 14 },
-                { "data": 15 },
-                { "data": 16 },
-                { "data": 17 }
+            dom: 'Bfrtip',
+            ajax: "",
+            columns: [
+                { data: "employee_id" },
+                { data: "first_name" },
+                { data: "last_name" },
+                { data: "email" },
+                { data: "department_id" },
+                { data: "manager_id" },
+                { data: "role_id" },
+                { data: "password_hash" },
+                { data: "rfid_card_id" },
+                { data: "external_id" },
+                { data: "adp_employee_id" },
+                { data: "employment_type" },
+                { data: "temp_agency_id" },
+                { data: "active" },
+                { data: "created_at" },
+                { data: "created_by" },
+                { data: "updated_at" },
+                { data: "updated_by" }
+            ],
+            select: true,
+            buttons: [
+                { extend: "create", editor: editor },
+                { extend: "edit",   editor: editor },
+                { extend: "remove", editor: editor },
+                'searchBuilder'
             ]
         });
     });
