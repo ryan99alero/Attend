@@ -1,9 +1,9 @@
 <?php
 // Database configuration
 $servername = "localhost";
-$username = "db_username";
-$password = "db_password";
-$dbname = "db_name";
+$username = "phpmyadmin";
+$password = "KnzudGNfJoiQgKv3nUNY37";
+$dbname = "time_attendance_system";
 
 // DataTables PHP library
 include("vendor/Editor/lib/DataTables.php");
