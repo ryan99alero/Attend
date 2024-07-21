@@ -17,6 +17,7 @@
       <path value="$PROJECT_DIR$/vendor/Editor/examples" />
       <path value="$PROJECT_DIR$/vendor/Editor/controllers" />
       <path value="$PROJECT_DIR$/vendor/Editor/js" />
+      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net-searchpanes" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.0">
