@@ -5,6 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" packagePrefix="Randgraphics\Attendance\" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/php/lib/" isTestSource="false" packagePrefix="DataTables\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/Editor/controllers" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/Editor/css" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/Editor/examples" />
