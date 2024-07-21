@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DataTables Editor Example</title>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/datatables.css"/>
+    <script src="../../vendor/components/jquery/jquery.min.js"></script>
+    <script src="../../assets/js/datatables.min.js"></script>
+    <script src="../../assets/js/datatables.js"></script>
+</head>
+<body>
+<table id="example" class="display" style="width:100%">
+    <thead>
+    <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Position</th>
+        <th>Office</th>
+        <th>Extn.</th>
+        <th>Start date</th>
+        <th>Salary</th>
+    </tr>
+    </thead>
+</table>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        var editor = new $.fn.DataTable.Editor({
+            ajax: {
+                url: "employee2_server.php",
+                type: "POST",
+                error: function(xhr, status, error) {
+                    console.error('AJAX Error:', status, error);
+                    console.log(xhr.responseText);
+                }
+            },
+            table: "#example",
+            fields: [
+                { label: "First name", name: "firstname" },
+                { label: "Last name", name: "lastname" },
+                { label: "Position", name: "position_id" },
+                { label: "Office", name: "office" },
+                { label: "Extn.", name: "extn" },
+                { label: "Start date", name: "start_date" },
+                { label: "Salary", name: "salary" }
+            ]
+        });
+
+        $('#example').DataTable({
+            dom: "Bfrtip",
+            ajax: {
+                url: "employee2_server.php",
+                type: "POST",
+                error: function(xhr, status, error) {
+                    console.error('AJAX Error:', status, error);
+                    console.log(xhr.responseText);
+                }
+            },
+            columns: [
+                { data: "firstname" },
+                { data: "lastname" },
+                { data: "position_id" },
+                { data: "office" },
+                { data: "extn" },
+                { data: "start_date" },
+                { data: "salary" }
+            ],
+            select: true,
+            buttons: [
+                { extend: "create", editor: editor },
+                { extend: "edit", editor: editor },
+                { extend: "remove", editor: editor }
+            ]
+        });
+    });
+</script>
+</body>
+</html>
