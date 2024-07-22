@@ -12,15 +12,16 @@
   </component>
   <component name="PhpIncludePathManager">
     <include_path>
-      <path value="$PROJECT_DIR$/vendor/Editor/lib" />
-      <path value="$PROJECT_DIR$/vendor/Editor/css" />
-      <path value="$PROJECT_DIR$/vendor/Editor/examples" />
-      <path value="$PROJECT_DIR$/vendor/Editor/controllers" />
-      <path value="$PROJECT_DIR$/vendor/Editor/js" />
-      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net-searchpanes" />
+      <path value="$PROJECT_DIR$/application" />
+      <path value="$PROJECT_DIR$/assets/vendor" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="7.0">
+  <component name="PhpProjectServersManager">
+    <servers>
+      <server host="192.168.29.54" id="7c210786-0910-4dae-b2fc-16107a589097" name="192.168.29.54" use_path_mappings="true" />
+    </servers>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.3">
     <option name="suggestChangeDefaultLanguageLevel" value="false" />
   </component>
   <component name="PhpStanOptionsConfiguration">
@@ -28,7 +29,7 @@
   </component>
   <component name="PhpUnit">
     <phpunit_settings>
-      <PhpUnitSettings custom_loader_path="$PROJECT_DIR$/vendor/autoload.php" />
+      <PhpUnitSettings load_method="PHPUNIT_PHAR" custom_loader_path="/opt/homebrew/bin/phpunit" phpunit_phar_path="/opt/homebrew/bin/phpunit" />
     </phpunit_settings>
   </component>
   <component name="PsalmOptionsConfiguration">
