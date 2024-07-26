@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Attend.iml" filepath="$PROJECT_DIR$/.idea/Attend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Attend4AdminLTE/.idea/Attend4AdminLTE.iml" filepath="$PROJECT_DIR$/../Attend4AdminLTE/.idea/Attend4AdminLTE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../CodeIgniter3/.idea/CodeIgniter3.iml" filepath="$PROJECT_DIR$/../CodeIgniter3/.idea/CodeIgniter3.iml" />
       <module fileurl="file://$PROJECT_DIR$/../CodeIgniter4/.idea/CodeIgniter4.iml" filepath="$PROJECT_DIR$/../CodeIgniter4/.idea/CodeIgniter4.iml" />
     </modules>
   </component>
